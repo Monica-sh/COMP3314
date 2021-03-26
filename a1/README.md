@@ -10,13 +10,13 @@ To successfully run the models, just follow the order of the Notebook.
 ## Logistic regression Construction
 1. Introduction
 2. Logistic regression Model Setup
-3. Load data & Apply the model
+3. Load data & Apply to the model
 4. Plotting the result for analysis
 5. Parameter Analysis
 
 ## Random Forest Construction
 1. Introduction
-2. Decision Tree
-3. Random Forest
-4. Load data & Apply the model
+2. Decision Tree Model Setup
+3. Random Forest Model Setup
+4. Load data & Apply to the model
 5. Parameter Analysis
