@@ -1,12 +1,9 @@
 # COMP3314_a2
 COMP3314 Assignment 2 - CNN
 
-Using PyTorch to construct.
+> **Using PyTorch to construct CNN for a 10-category classification problem which classifies digit images into 0-9.**
 
 ### Author: Guo Shunhua 3035447635 
-
-### Dataset AND training result
-Data set used is provided in the folder named 'data'
 
 ## Functions
 
@@ -72,4 +69,8 @@ simply run main.py (the procedure is listed in `main()` function).
 And you can change the parameters in `PARAM`.
 
 
+### Dataset AND training result
+Data set used is provided in the folder named 'data'.
+
+The training set contains 3,000 samples for each class and the testing set contains 500 samples for each class. Each input image has three channels and each channel contains 32*32 pixels.
 
