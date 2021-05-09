@@ -49,9 +49,9 @@ def train(model, criterion, optimizer, scheduler, num_epochs=25, save_name=None,
                 running_loss = 0.0
         scheduler.step()
         loss_list.append(epoch_loss)
-        
+
         ep_time = timeit.default_timer() - ep_start
-        time_list(ep_time)
+        time_list.append(ep_time)
         print('Epoch Time: ', ep_time)  
 
         if if_eval:
@@ -77,7 +77,7 @@ def train(model, criterion, optimizer, scheduler, num_epochs=25, save_name=None,
         data = {}
         data['PARAM'] = PARAM
         data['loss'] = loss_list
-        date['time'] = time_list
+        data['time'] = time_list
         if if_eval:
             data['test_accuracy'] = test_accuracy
             data['test_class_accuracy'] = test_class_accuracy
@@ -125,13 +125,12 @@ def test(model, if_print_total=True, if_print_class=True):
     return test_accuracy, test_class_accuracy
 
 if __name__ == '__main__':
-
     # TODO: You can change these data augmentation and normalization strategies for
     # better training and testing (https://pytorch.org/vision/stable/transforms.html)
 
     # TODO: Adjust the following hyper-parameters: learning rate, decay strategy, number of training epochs.
     PARAM = {
-        "lr": 1e-4,
+        "lr": 1e-3,
         'step_size': 20, 
         'gamma': 0.1,
         'num_epochs': 25,
@@ -139,11 +138,12 @@ if __name__ == '__main__':
         'transform_train': (0.485, 0.456, 0.406), 
         'transfrom_test': (0.229, 0.224, 0.225),
 
-        'save_name': '40w_2relu',
+        'save_name': '1e-3',
         'if_eval': True,
     }
 
     trainloader, testloader, class_names = data_loading(PARAM=PARAM)
+
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu") # Set device to "cpu" if you have no gpu
     model_ft = Net() # Model initialization
     model_ft = model_ft.to(device) # Move model to cpu

@@ -1,5 +1,5 @@
 # COMP3314_a2
-COMP3314 Assignment 2 - CNN
+COMP3314 Assignment 1 - CNN
 
 Using PyTorch to construct.
 
