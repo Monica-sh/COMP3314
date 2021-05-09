@@ -131,14 +131,14 @@ if __name__ == '__main__':
     # TODO: Adjust the following hyper-parameters: learning rate, decay strategy, number of training epochs.
     PARAM = {
         "lr": 1e-4,
-        'step_size': 5, 
-        'gamma': 0.1,
+        'step_size': 20, 
+        'gamma': 0.2,
         'num_epochs': 25,
         'batch_size': 4,
         'transform_train': (0.485, 0.456, 0.406), 
         'transfrom_test': (0.229, 0.224, 0.225),
 
-        'save_name': 'step5',
+        'save_name': 'gamma2',
         'if_eval': True,
     }
 
