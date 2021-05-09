@@ -5,4 +5,6 @@ Using Jupyter Notebook to implement.
 
 ### Author: Guo Shunhua 3035447635 
 
-## Alogrithm
+## Algorithm 
+1. Multiclass Logistic Regression
+2. Multiclass Decision Tree and Random Forest
