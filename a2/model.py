@@ -75,6 +75,7 @@ class LeNet(nn.Module):
         super(LeNet, self).__init__()
         # [4, 3, 32, 32]
         self.conv1 = nn.Conv2d(3, 6, 5) #C_in=3, C_out=6, Kernel=5
+        # (32 - 5)/1+1 = 28
         # [4, 6, 28, 28] > reLU
         self.pool = nn.MaxPool2d(2, 2) #kernel=2, stride=2
         # (28-2)/2 + 1 = 14
@@ -82,7 +83,8 @@ class LeNet(nn.Module):
         self.conv2 = nn.Conv2d(6, 16, 5)
         # (14-5)/1 + 1 = 10 
         # [4, 16, 10, 10] > reLU > MaxPooling > [4, 16, 5, 5]
-        # flattern > [4, 400]
+        # 400 = 16 * 5 * 5
+        # flattern > [4, 400] 400 = 16 * 5 * 5
         self.fc1 = nn.Linear(16 * 5 * 5, 120)
         self.fc2 = nn.Linear(120, 84)
         self.fc3 = nn.Linear(84, 10)
